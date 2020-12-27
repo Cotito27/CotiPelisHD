@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
+  <!-- FONTAWESOME ICONS -->
+  <script src="https://kit.fontawesome.com/9ac3f17ed5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark">
+    <a class="navbar-bars wave" href="#"><i class="fas fa-bars"></i></a>
+    <a class="navbar-title wave" href="/"><%= title %></a>
+    
+    <a class="search-title wave" href="#">
+      <i class="fas fa-search"></i>
+    </a>
+  </nav>
+  <div class="sidenav">
+    <% let decisiveSelect = ''; %>
+    <% let decisiveSelect2 = ''; %>
+    <% if(pagesInactive) { %>
+      <% decisiveSelect = ' title-active' %> 
+    <% } else { %>
+      <% decisiveSelect2 = ' title-active' %>
+    <% } %>
+    <a class="wave<%= decisiveSelect %>" href="/"><i class="fas fa-home"></i> <span class="name-side-title">Inicio</span> </a>
+    
+    <a class="wave<%= decisiveSelect2 %>" href="/peliculas/pages/1"><i class="fas fa-tv"></i> <span class="name-side-title">Peliculas</span></a>
+    
+    <a class="wave" href="#clients"><i class="fas fa-video"></i> <span class="name-side-title">Series</span></a>
+    <a class="wave" href="#contact"><i class="fab fa-facebook-square"></i> <span class="name-side-title">Facebook</span></a>
+  </div>
+  <!-- Flickity HTML init -->
+  <div class="container_home animate__animated animate__fadeIn">
+    <% if(pagesInactive) { %> 
+    <div class="preview_imgs_popular">
+      <h3 class="text-white fw-400 title_popular_videos">Más populares</h3>
+     
+      <div class="carousel">
+        <div class="carousel__contenedor">
+          <button aria-label="Anterior" class="carousel__anterior tooltip_auto" data-tippy-content="Anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel__lista">
+            <% popularPelis.forEach((peli) => { %>
+              <a href="#" class="carousel__elemento wave tooltip_auto" data-tippy-content="<%= peli.title %> (<%= peli.year %>)">
+                <img class="auto_loader_img" style="background: #072650;" src="/img/placeholder-image.png" data-src="<%= peli.image %>" alt="Ver <%= peli.title %> (<%= peli.year %>) Online">
+                <p class="title-video"><%= peli.title %> (<%= peli.year %>)</p>
+                <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score"><%= peli.score %>/10</label></div>
+              </a>
+            <% }); %>
+          </div>
+
+          <button aria-label="Siguiente" class="carousel__siguiente tooltip_auto" data-tippy-content="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div role="tablist" class="carousel__indicadores">
+
+        </div>
+      </div>
+     
+      <!-- <div class="gallery js-flickity"
+      data-flickity>
+        <img class="gallery-cell" src="https://image.tmdb.org/t/p/w154/cmzfmGxXxSF716SYBW6seMgxMWE.jpg">
+        <div class="title-img">asdas</div>
+        <img class="gallery-cell" src="https://image.tmdb.org/t/p/w154/a2fmufY8h0SirNKt37yprZdf7xi.jpg">
+        <img class="gallery-cell" src="https://image.tmdb.org/t/p/w154/iWkm5KikTC3kRjc5rGlktSSMHlM.jpg">
+        <img class="gallery-cell" src="https://image.tmdb.org/t/p/w154/leCkJsZbQDULb0x5EocYs0JEloF.jpg">
+        <img class="gallery-cell" src="https://image.tmdb.org/t/p/w154/fnViTJJt6pUq44QGBhk4FJqr82o.jpg">
+        <img class="gallery-cell" src="https://image.tmdb.org/t/p/w154/tewRFdur9P7P5yk9FQJPwSTR55t.jpg">
+      </div> -->
+
+    </div>
+    <% } %>
+    <% let titlePelis = 'Últimos estrenos'; %>
+    <% if(!pagesInactive) { %>
+    <% titlePelis = `Lista completa de películas Pagina: ${currentPage} online en hd gratis`;    %>
+    <% } %>
+      <div class="content_last_videos">
+        <h3 class="title_videos_last"><%= titlePelis %></h3>
+        <div class="content_img_videos">
+          <% bodyPeli.forEach((peli) => { %>
+            <a href="#" class="carousel__elemento wave tooltip_auto" data-tippy-content="<%= peli.title %> (<%= peli.year %>)">
+              <img class="b-lazy img__loading" src="/img/loader.gif" data-src="<%= peli.image %>" alt="">
+              <p class="title-video"><%= peli.title %> (<%= peli.year %>)</p>
+              <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score"><%= peli.score %>/10</label></div>
+            </a>
+            <% }) %>
+          
+        </div>
+      </div>
+
+    <% if(pagesInactive) { %>
+      <a href="#">
+        <button class="btnMoreVideos wave">Ver más películas</button>
+      </a>
+    <% } else { %>
+      <div id="pagination_container"></div>
+      <div id="data_container"></div>
+    <% } %>
+  </div>
+  
+  <%= numPaginas %>
+  <% if(!pagesInactive) { %>
+    <script>
+      let numberPages = '<%= numPaginas %>';
+      let currentPage = '<%= currentPage %>';
+    </script>
+  <% } %>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+  <!-- BLAZY IMAGENES -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js" integrity="sha512-Yrd3VqXNBUzyCQWVBlL65mTdE1snypc9E3XnGJba0zJmxweyJAqDNp6XSARxxAO6hWdwMpKQOIGE5uvGdG0+Yw==" crossorigin="anonymous"></script>
+  <script src="https://rawgithub.com/dinbror/blazy/master/blazy.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/twbs-pagination@1.4.1/jquery.twbsPagination.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

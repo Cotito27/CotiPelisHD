@@ -1,0 +1,597 @@
+{
+  "peliculas": [
+    {
+      "image": "https://image.tmdb.org/t/p/w154/nvCsNbIaYo96GrM2IuQiiVOkq5O.jpg",
+      "title": "Mujer Maravilla 1984",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/9q5ZjtW86MUNKHfgFuolMCNofzm.jpg",
+      "title": "Superheroicos",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/jl8rZYy7JmbWlBlvDCfwvDmGO0g.jpg",
+      "title": "Soul",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/rttZeIKCI4VCIVsJGdVkYxSor8G.jpg",
+      "title": "Cielo de medianoche",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/cmzfmGxXxSF716SYBW6seMgxMWE.jpg",
+      "title": "Train to Busan: Peninsula",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/pvtyxijaBrCSbByXLcUIDDSvc40.jpg",
+      "title": "La madre del blues",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/ejt5Ox4sXkiKfXgACCMEErigJtl.jpg",
+      "title": "Los caminos que no escogemos",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/h63xf8jsuSr7SdSlt68b5bMqdy9.jpg",
+      "title": "Corporate",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2017
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/90eStEGcL7tb65UU6ptMaG2PtIp.jpg",
+      "title": "El árbol de los deseos",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2019
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/5tMKS9OfwDITL4HEoJFvywqxszB.jpg",
+      "title": "The Last Reef",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2012
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/a2fmufY8h0SirNKt37yprZdf7xi.jpg",
+      "title": "Los Croods: Una nueva era",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/iWkm5KikTC3kRjc5rGlktSSMHlM.jpg",
+      "title": "La estación de la felicidad",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/i8ZaUny5Stxxsmc02ECOEQan1il.jpg",
+      "title": "Cambio de papeles",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/7WWOiP8F6PHjXpJrnRZfvO2XNW.jpg",
+      "title": "Curious George: Go West, Go Wild",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/caCbdsdGHDJNMjSiA5X4mgIfe61.jpg",
+      "title": "Navidades en California",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/fnViTJJt6pUq44QGBhk4FJqr82o.jpg",
+      "title": "El gran Gatsby",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2013
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/xc1ySSakTbAOoFvZrZ2Hx6aXZJy.jpg",
+      "title": "Wild Mountain Thyme",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/nIWCrXAqxUuIDxMKAiTem5cKg67.jpg",
+      "title": "Wolfwalkers",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/9UQxxaJMZODEIh5zh7sm0ag75EY.jpg",
+      "title": "En guerra con mi abuelo",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/bBgc1F5o6PMOxTPrOoZ3oIkP2KT.jpg",
+      "title": "Ahora o nunca",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2007
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/uTcJAxIV8BzNXuvcViBSibQSBid.jpg",
+      "title": "Soy tu mujer",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/h13fXv8dg41fSqNmKEz25RIt2SH.jpg",
+      "title": "Cómo sobrevivir en un mundo material",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/f4BqHLF4f4WBMEAe8Y0fWdwRzB1.jpg",
+      "title": "Mi nombre es Ninguno",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1973
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/utYKyP9q7aYxU6LdOwkxRo92XFU.jpg",
+      "title": "El Baile",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/5tOcZpqnY8tOGXMleCtOyWBSHq.jpg",
+      "title": "Silent Hill",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2006
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/6Q5cfHddcKyC4KBKOzZeQ5hI55N.jpg",
+      "title": "La increíble historia de la Isla de las Rosas",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2006
+    }
+    ,
+    {
+      "image": "https://image.tmdb.org/t/p/w154/n5mSiD2V1RJp1VaMHzoPGUcwoBe.jpg",
+      "title": "Araf 2",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2018
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/qvvgItf78gcyfwSOSj4T6S4YJPj.jpg",
+      "title": "Novia se alquila",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1987
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/kPAFgEl0GFeLg7mNWRNhOD4t9JS.jpg",
+      "title": "Tú, Kimi y yo",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1958
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/pVHgv6leYDCKrW4bdzA77NlMXXM.jpg",
+      "title": "Sound of Metal",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2019
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/82yxvnYtgeRzsq5f9USlrFJI05s.jpg",
+      "title": "Lassie Vuelve a Casa",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/sxHFGPKLWj9e3aaA6wGVxghoiPE.jpg",
+      "title": "Viernes Infernal",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2002
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/6rRhnTbOSqBzoIlNYXHIdUliHuQ.jpg",
+      "title": "El hombre bicentenario",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1999
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/zXXDmz5cPuSo9LveCNjZ1j16szC.jpg",
+      "title": "La Mancha Voraz",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1988
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/zeD4PabP6099gpE0STWJrJrCBCs.jpg",
+      "title": "Venganza Implacable",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/3x1AEQ8aqHx37blr9Y4SdpRfoIO.jpg",
+      "title": "Amadrinadas",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/Atd7UaGgwOhcyHggqchYLqSJ6VO.jpg",
+      "title": "Mank",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/xefaYjW0dQfVbyEuazbC0LdtBh8.jpg",
+      "title": "En busca del destino",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1997
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/etb45IEkJnvTd3ngGIfqxCqRT5i.jpg",
+      "title": "El misterio del dragón",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2019
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/jmiZebStqOpHlKinDP5keHCLRXQ.jpg",
+      "title": "Hermanos por pelotas",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2008
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/knGlL0UyUYxF9fY0rLJyUbiJkbs.jpg",
+      "title": "La nochebuena es mi condena",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/56F2g4tnPerzfKhHMp1mKu0d2uo.jpg",
+      "title": "Freaky",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/oh8XmxWlySHgGLlx8QOBmq9k72j.jpg",
+      "title": "Tenet",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/ideupknj7ux8S54Tl1TRvauUEy0.jpg",
+      "title": "Jóvenes y Brujas",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/enl6RjnQEriJqMyGcMb72qgT8Ei.jpg",
+      "title": "Bambi 2",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2006
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/guDz6dJz1ryQhg2U8IKSaRoirdA.jpg",
+      "title": "Fierce",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/tewRFdur9P7P5yk9FQJPwSTR55t.jpg",
+      "title": "Spontaneous",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/cfyL7XbU4KaZx8H0XrPbQaO7BLu.jpg",
+      "title": "Tai Chi Master",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1993
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/h37VMJAm4EhKC3k6I6K20VHaSQe.jpg",
+      "title": "Cómo escapar de Búfalo",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2019
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/kpZ2SfwLHjuf2HmgaFko32cPgbl.jpg",
+      "title": "Bajo sospecha",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2019
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/eu747ko823mktL3ygo7ohdZznP7.jpg",
+      "title": "El deseo de Navidad de Ángela",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/hCR2i9rK6P4VHMfFw2MT5jDGJcN.jpg",
+      "title": "Chaco",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/dnN1ncxEOO1TY0gYL2FWxJqlhlL.jpg",
+      "title": "The Silencing",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/a2Dcje3NkmySevZo5hVCfPaxqdL.jpg",
+      "title": "Cut Throat City",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/wGkr4r1e8nubmSNKJpv3HL6sFrA.jpg",
+      "title": "La galería de los corazones rotos",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/iik8EaTX1ElExuZLfHKBi4dl9Zh.jpg",
+      "title": "La Bestia",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/iqqWhCEPzHn1EX04BKFRuRy6cJr.jpg",
+      "title": "El teléfono",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/hmeP0Fd7TipMllhOdFeSimrLTCs.jpg",
+      "title": "Belleza negra",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/jzsagFecwagw83Jo8819JtXrGv.jpg",
+      "title": "Wall Street",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1987
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/u3yozs3oGY0ubwf4cKQKOMWqNx3.jpg",
+      "title": "Mi tío Frank",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/8QKWOuEZk77ey7oA1Ul3e3xm4KY.jpg",
+      "title": "Crónicas De Navidad 2",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/yVsrDK8KOuFwSCvTGsn2lX7srEn.jpg",
+      "title": "Mosul",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2019
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/2bhI7Ivk7VmvUaJaDTxJUgOXp1E.jpg",
+      "title": "The Death & Life of John F. Donovan",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2018
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/5t5lmVAG3SkHrYdjMwAAobL8m1w.jpg",
+      "title": "La leyenda del jinete sin cabeza",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1999
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/wxr8aYQfc3dRo3ndBnGCTkvmOOz.jpg",
+      "title": "Me Gusta la Tuya",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/1EhpBGcfBthZWPccZ6cMOy0BC7c.jpg",
+      "title": "El cuaderno de Tomy",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/yBZu9MOX38NCshVkHK57GkOps8S.jpg",
+      "title": "Uno de Nosotros",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/aA0D6DKIfLtXYNy94Qq2IW5NiGR.jpg",
+      "title": "Hillbilly, una elegía rural",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/vtcBQTGxk6ZfKSfDXBTGG6fzSJ1.jpg",
+      "title": "Destinos opuestos",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1991
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/AqCOt1cWfKqCepxK7LIdT812idH.jpg",
+      "title": "Porky's",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 1981
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/l8WbLupfTgqVb4JluUrsxxGEL8d.jpg",
+      "title": "La Fortaleza",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/t9ttLmZ3NJbgtnOsGyQNiF2ngJo.jpg",
+      "title": "Aztech",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/fNjAMONXNx8TrtOem36tYiegq6b.jpg",
+      "title": "Maracaibo",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2017
+    },
+    {
+      "image": "https://image.tmdb.org/t/p/w154/h1BZHYQl3pGOgaGDK6zwrOsYIop.jpg",
+      "title": "El Testamento de la Abuela",
+      "description": "",
+      "score": 9,
+      "video": "",
+      "year": 2020
+    }
+  ]
+}
