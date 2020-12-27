@@ -33,7 +33,7 @@ $(document).ready(function() {
 			opacity: 0
 		}, 500, function() {
       $(this).remove();
-      if(thisEvent.href == undefined) return;
+      if(thisEvent.href == undefined || thisEvent.href.includes('/#')) return;
       location.href = thisEvent.href;
 		});
   });
