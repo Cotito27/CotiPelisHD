@@ -129,8 +129,8 @@ $(document).ready(function() {
 window.addEventListener('load', function() {
   if($('.carousel')[0]) {
     new Glider(document.querySelector('.carousel__lista'), {
-      slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToShow: 10,
+      slidesToScroll: 10,
       draggable: true,
       dots: '.carousel__indicadores',
       arrows: {
