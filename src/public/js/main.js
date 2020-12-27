@@ -3,6 +3,10 @@ $(document).ready(function() {
   if($(window).width() <= 730) {
     $('.sidenav').addClass('d-none');
     $('.container_home').addClass('extend-container');
+    
+  }
+  if($(window).width() <= 480) {
+    $('.navbar-title').text('CP');
   }
   $('body').on('click', '.wave', function(e) {
 		e.preventDefault();
@@ -226,5 +230,10 @@ window.addEventListener('load', function() {
       $('.sidenav').addClass('d-none');
       $('.container_home').addClass('extend-container');
     } 
+    if($(window).width() <= 480) {
+      $('.navbar-title').text('CP');
+    } else {
+      $('.navbar-title').text('CotiPelisHD');
+    }
   });
 });

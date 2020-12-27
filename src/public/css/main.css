@@ -602,11 +602,11 @@ button:hover {
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: 50px; */
-    width: 43px;
+    width: auto;
     content: "C";
   }
   .form-search {
-    margin-left: calc(100vw - 320px);
+    margin-left: calc(100vw - 330px);
   }
   .search-title {
     margin-left: calc(100vw - 150px);
