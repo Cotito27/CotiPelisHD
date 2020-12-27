@@ -29,6 +29,7 @@ $(document).ready(function() {
 			opacity: 0
 		}, 500, function() {
       $(this).remove();
+      if(thisEvent.href == undefined) return;
       location.href = thisEvent.href;
 		});
   });
