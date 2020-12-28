@@ -1,0 +1,66 @@
+<% let sectionIdent = section.substring(0, section.length - 1).toLowerCase(); %>
+<div class="container_home animate__animated animate__fadeIn">
+  <% if(pagesInactive) { %> 
+  <div class="preview_imgs_popular">
+    <h3 class="text-white fw-400 title_popular_videos">Más populares</h3>
+    
+    <div class="carousel">
+      <div class="carousel__contenedor">
+        <button aria-label="Anterior" class="carousel__anterior tooltip_auto" data-tippy-content="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel__lista">
+          <% popularVideos.forEach((peli) => { %>
+            <a href="/<%= sectionIdent %>/<%= peli.title %>" class="carousel__elemento wave tooltip_auto" data-tippy-content="<%= peli.title %> (<%= peli.year %>)">
+              <img class="auto_loader_img" style="background: #072650;" src="/img/placeholder-image.png" data-src="<%= peli.image %>" alt="Ver <%= peli.title %> (<%= peli.year %>) Online">
+              <p class="title-video"><%= peli.title %> (<%= peli.year %>)</p>
+              <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score"><%= peli.score %>/10</label></div>
+            </a>
+          <% }); %>
+        </div>
+
+        <button aria-label="Siguiente" class="carousel__siguiente tooltip_auto" data-tippy-content="Siguiente">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div role="tablist" class="carousel__indicadores">
+
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <% let titlePelis = 'Últimos estrenos'; %>
+  <% if(!pagesInactive) { %>
+  <% titlePelis = `Lista completa de ${section} Pagina: ${currentPage} online en hd gratis`;    %>
+  <% } else { %>
+    <div class="tab">
+      <button class="tablinks active tab_peli">Peliculas</button>
+      <button class="tablinks tab_serie">Series</button>
+    </div>
+  <% } %>
+  
+    <div class="content_last_videos">
+      <h3 class="title_videos_last"><%= titlePelis %></h3>
+      <div class="content_img_videos">
+        <% bodyVideos.forEach((peli) => { %>
+          <a href="/<%= sectionIdent %>/<%= peli.title %>" class="carousel__elemento wave tooltip_auto" data-tippy-content="<%= peli.title %> (<%= peli.year %>)">
+            <img class="b-lazy img__loading" src="/img/loader.gif" data-src="<%= peli.image %>" alt="">
+            <p class="title-video"><%= peli.title %> (<%= peli.year %>)</p>
+            <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score"><%= peli.score %>/10</label></div>
+          </a>
+          <% }) %>
+        
+      </div>
+    </div>
+
+  <% if(pagesInactive) { %>
+    <a href="#">
+      <button class="btnMoreVideos wave">Ver más <%= section %></button>
+    </a>
+  <% } else { %>
+    <div id="pagination_container"></div>
+    <div id="data_container"></div>
+  <% } %>
+</div>

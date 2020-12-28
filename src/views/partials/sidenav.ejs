@@ -1,0 +1,20 @@
+<div class="sidenav animate__animated animate__fadeIn">
+  <% let decisiveSelect = ''; %>
+  <% let decisiveSelect2 = ''; %>
+  <% let decisiveSelect3 = ''; %>
+  <% if(pagesInactive) { %>
+    <% decisiveSelect = ' title-active' %> 
+  <% } else { %>
+    <% if(section == 'Peliculas') { %>
+      <% decisiveSelect2 = ' title-active' %>
+    <% } else { %>
+      <% decisiveSelect3 = ' title-active' %>
+    <% } %>
+  <% } %>
+  <a class="wave<%= decisiveSelect %>" href="/"><i class="fas fa-home"></i> <span class="name-side-title">Inicio</span> </a>
+  
+  <a class="wave<%= decisiveSelect2 %>" href="/peliculas/pages/1"><i class="fas fa-tv"></i> <span class="name-side-title">Peliculas</span></a>
+  
+  <a class="wave<%= decisiveSelect3 %>" href="/series/pages/1"><i class="fas fa-video"></i> <span class="name-side-title">Series</span></a>
+  <a class="wave" target="_blank" href="https://www.facebook.com/groups/700666550639313"><i class="fab fa-facebook-square"></i> <span class="name-side-title">Facebook</span></a>
+</div>

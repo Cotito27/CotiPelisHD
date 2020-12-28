@@ -10,7 +10,7 @@
   --dark-light: rgb(63, 61, 61);
   --light-dark: rgb(218, 216, 216);
   --yellow: rgb(222, 224, 109);
-  --size-letter-title: 28px;
+  --size-letter-title: 26px;
   --size-letter-content: 14px;
   --size-letter-side: 20px;
   --p100: 100%;
@@ -50,7 +50,7 @@ body {
   top: 0;
   left: 0;
   background-color: var(--blue-dark-dark);
-  height: 90px;
+  height: 65px;
   width: 100%;
   display: flex;
   text-align: center;
@@ -109,8 +109,27 @@ body {
   font-weight: 350;
 }
 
+.description-video {
+  color: white;
+  text-align: center;
+  max-width: 500px;
+  letter-spacing: 0.7pt;
+  line-height: 20pt;
+  font-weight: 510;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 .form-search {
-  margin-left: calc(100vw - 460px);
+  /* margin-left: calc(100vw - 460px); */
+  position: absolute;
+  right: 25px;
+  max-width: 80%;
+  margin-bottom: -3px;
+}
+
+.error_nofound {
+  color: var(--light);
+  font-size: 22px;
 }
 
 .close-search {
@@ -142,7 +161,7 @@ body {
   width: 300px;
   position: fixed;
   z-index: 1;
-  top: 90px;
+  top: 65px;
   left: 0;
   background-color: var(--blue-dark-dark);
   overflow-x: hidden;
@@ -152,7 +171,7 @@ body {
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: var(--size-letter-side);
+  font-size: calc(var(--size-letter-side) - 4px);
   color: #a9bed6;
   font-weight: 400;
   display: block;
@@ -161,7 +180,7 @@ body {
 
 .sidenav .fas,
 .sidenav .fab {
-  font-size: 16px;
+  font-size: 14px;
   padding: var(--padding-letters);
   margin-top: 6px;
 }
@@ -200,7 +219,7 @@ div:-webkit-any-link:focus {
   outline-offset: 1px;
 }
 .container_home {
-  margin-top: 100px;
+  margin-top: 70px;
   width: calc(100vw - 350px);
   margin-left: 310px;
   text-align: center;
@@ -210,7 +229,7 @@ div:-webkit-any-link:focus {
       rgba(34, 49, 67, 0.94),
       rgba(34, 49, 67, 0.95)
     ),
-    url(https://pelisplushd.net/images/body_wall.jpg);
+    url(/img/body_wall.jpg);
   background-repeat: repeat;
   padding: 8px;
   box-shadow: 0.3px 0.3px 1px 1px #a5aab1;
@@ -399,6 +418,32 @@ div:-webkit-any-link:focus {
   height: 315px;
 }
 
+.preview_video,
+.preview_video .title-video {
+  text-decoration: none !important;
+  color: var(--light);
+  line-height: 1.5;
+}
+
+.preview_video .title-video {
+  font-size: 20px;
+}
+
+.preview_video .title-description {
+  font-weight: 550;
+  font-size: 16px;
+}
+
+.preview_video .genere {
+  color: rgb(43, 170, 255);
+  font-weight: 550;
+}
+
+.preview_video .generos-video {
+  font-weight: 550;
+  font-size: 16px;
+}
+
 .carousel__elemento .title-video {
   text-align: center;
   color: var(--light);
@@ -575,11 +620,45 @@ button:hover {
 }
 .extend-container {
   margin-left: 10px !important;
-  width: calc(100vw - 45px) !important;
+  width: calc(100vw - 35px) !important;
 }
 
 .title-active {
   background-color: var(--blue-dark-light);
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: transparent;
+  border-bottom: 2px solid #fff;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: white;
+  background-color: transparent;
+  margin: 0 !important;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #04a1f4;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: var(--blue-dark-dark);
+  border-bottom: 6px solid #04a1f4;
+  color: var(--light-dark) !important;
 }
 
 @media screen and (max-height: 450px) {
@@ -606,7 +685,7 @@ button:hover {
     content: "C";
   }
   .form-search {
-    margin-left: calc(100vw - 370px);
+    /* margin-left: calc(100vw - 370px); */
   }
   .search-title {
     margin-left: calc(100vw - 150px);

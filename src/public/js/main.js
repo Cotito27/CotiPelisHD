@@ -1,3 +1,25 @@
+
+function loaderImgs() {
+  var bLazy = new Blazy({
+    breakpoints: [{
+      width: 154, // max-width,
+      height: 315,
+      src: 'data-src'
+ }]
+  , success: function(element){
+  setTimeout(function(){
+  // We want to remove the loader gif now.
+  // First we find the parent container
+  // then we remove the "loading" class which holds the loader image
+  var parent = element;
+  // console.log(parent);
+    parent.className = parent.className.replace(/\bimg__loading\b/,'');
+    }, 0);
+      },error: (err) => {
+        alert(err)
+      },
+  });
+}
 $(document).ready(function() {
   // $('.flickity-prev-next-button').find('svg').attr('viewBox', '0 0 0 0');
   if($(window).width() <= 730) {
@@ -8,6 +30,79 @@ $(document).ready(function() {
   if($(window).width() <= 480) {
     $('.navbar-title').text('CP');
   }
+  function openCity(evt) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+ 
+  $('.tab_peli').on('click', async function() {
+    if(!$(this).hasClass('active')) {
+      let response = await fetch('/getPeli');
+      let res = await response.json();
+      let newHTML = '';
+      res.forEach((v) => {
+        newHTML += `<a href="/${'pelicula'}/${v.title}" class="carousel__elemento wave tooltip_auto" data-tippy-content="${v.title} (${v.year})">
+        <img class="b-lazy img__loading" src="/img/loader.gif" data-src="${v.image}" alt="">
+        <p class="title-video">${v.title} (${v.year})</p>
+        <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score">${v.score}/10</label></div>
+      </a>`;
+      });
+      $('.content_img_videos').html(newHTML);
+      $('.btnMoreVideos').html('Ver más Peliculas');
+      loaderImgs();
+      setTimeout(() => {
+        loaderImgs();
+      },200); 
+      if(!isMobile()) {
+        tippy('.tooltip_auto', {
+          placement: 'bottom',
+          allowHTML: true,
+          animation: 'fade',
+          theme: 'dark',
+          arrow: '<br>'
+        });
+      }
+    }
+  });
+  $('.tab_serie').on('click', async function() {
+    if(!$(this).hasClass('active')) {
+      let response = await fetch('/getSerie');
+      let res = await response.json();
+      let newHTML = '';
+      res.forEach((v) => {
+        newHTML += `<a href="/${'serie'}/${v.title}" class="carousel__elemento wave tooltip_auto" data-tippy-content="${v.title} (${v.year})">
+        <img class="b-lazy img__loading" src="/img/loader.gif" data-src="${v.image}" alt="">
+        <p class="title-video">${v.title} (${v.year})</p>
+        <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score">${v.score}/10</label></div>
+      </a>`;
+      });
+      $('.content_img_videos').html(newHTML);
+      $('.btnMoreVideos').html('Ver más Series');
+      loaderImgs();
+      setTimeout(() => {
+        loaderImgs();
+      },200); 
+      if(!isMobile()) {
+        tippy('.tooltip_auto', {
+          placement: 'bottom',
+          allowHTML: true,
+          animation: 'fade',
+          theme: 'dark',
+          arrow: '<br>'
+        });
+      }
+    }
+  });
+  $('.tablinks').on('click', openCity);
   $('body').on('click', '.wave', function(e) {
 		e.preventDefault();
     let thisEvent = this;
@@ -34,6 +129,10 @@ $(document).ready(function() {
 		}, 500, function() {
       $(this).remove();
       if(thisEvent.href == undefined || thisEvent.href.indexOf('#') == thisEvent.href.length - 1) return;
+      if(thisEvent.target == '_blank') {
+        window.open(thisEvent.href, '_blank');
+        return;
+      }
       location.href = thisEvent.href;
 		});
   });
@@ -65,15 +164,189 @@ $(document).ready(function() {
     $('.inputSearch').focus();
       }, 100);
   });
+  $('body').on('keyup', '.inputSearch', async function() {
+    // if($(this).val() == '') return;
+    let response = await fetch(`/searchPeliculasSeries/1?name=${$(this).val()}`);
+    let res = await response.json();
+    if(res.error) { 
+      $('#pagination_container').remove();
+      $('.preview_imgs_popular').remove();
+      $('.tab').remove();
+      $('.btnMoreVideos').remove();
+      $('.title_videos_last').remove();
+      $('.content_img_videos').html('<div class="error_nofound">No se encontraron resultados</div>');
+      return;
+    }
+    // history.pushState(null, "", `/searchPeliculasSeries/1?name=${$(this).val()}`);
+    $('.preview_imgs_popular').remove();
+    $('.tab').remove();
+    $('.btnMoreVideos').remove();
+    $('#pagination_container').remove();
+    // $('.content_last_videos')
+    let numberPages = res.numberPages;
+    let newHTML = '';
+          res.arrayVideo.forEach((v) => {
+            newHTML += `<a href="/${'pelicula'}/${v.title}" class="carousel__elemento wave tooltip_auto" data-tippy-content="${v.title} (${v.year})">
+            <img class="b-lazy img__loading" src="/img/loader.gif" data-src="${v.image}" alt="">
+            <p class="title-video">${v.title} (${v.year})</p>
+            <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score">${v.score}/10</label></div>
+          </a>`;
+          });
+          $('.content_img_videos').html(newHTML);
+          loaderImgs();
+          setTimeout(() => {
+            loaderImgs();
+          },200); 
+          if(!isMobile()) {
+            tippy('.tooltip_auto', {
+              placement: 'bottom',
+              allowHTML: true,
+              animation: 'fade',
+              theme: 'dark',
+              arrow: '<br>'
+            });
+          }
+    if(numberPages) {
+      let numVeriPages = 0;
+      if(!$('#pagination_container')[0]) {
+        $('.container_home').append(`<div id="pagination_container"></div>
+        <div id="data_container"></div>`);
+      }
+      $('#pagination_container').twbsPagination({
+        totalPages: numberPages,
+        visiblePages: 4,
+        startPage: 1,
+        prev: '<span aria-hidden="true">&laquo;</span>',
+        next: '<span aria-hidden="true">&raquo;</span>',
+        onPageClick: async function (event, page) {
+          numVeriPages ++;
+          if(numVeriPages > 1) {
+              let newHTML = '';
+              let response = await fetch(`/searchPeliculasSeries/${page}?name=${$(this).val()}`);
+              let res = await response.json();
+              res.arrayVideo.forEach((v) => {
+                newHTML += `<a href="/${'pelicula'}/${v.title}" class="carousel__elemento wave tooltip_auto" data-tippy-content="${v.title} (${v.year})">
+                <img class="b-lazy img__loading" src="/img/loader.gif" data-src="${v.image}" alt="">
+                <p class="title-video">${v.title} (${v.year})</p>
+                <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score">${v.score}/10</label></div>
+              </a>`;
+              });
+              $('.content_img_videos').html(newHTML);
+              loaderImgs();
+              setTimeout(() => {
+                loaderImgs();
+              },200); 
+              if(!isMobile()) {
+                tippy('.tooltip_auto', {
+                  placement: 'bottom',
+                  allowHTML: true,
+                  animation: 'fade',
+                  theme: 'dark',
+                  arrow: '<br>'
+                });
+              }
+              }       
+        }
+    });
+     }
+     
+  });
   $('body').on('click', '.close-search', function() {
-    setTimeout(()=> {
+    setTimeout(async ()=> {
+      if($('.inputSearch').val() != '') {
+        let response = await fetch(`/searchPeliculasSeries/1?name=${''}`);
+    let res = await response.json();
+    if(res.error) { 
+      $('#pagination_container').remove();
+      $('.preview_imgs_popular').remove();
+      $('.tab').remove();
+      $('.btnMoreVideos').remove();
+      $('.title_videos_last').remove();
+      $('.content_img_videos').html('<div class="error_nofound">No se encontraron resultados</div>');
+      return;
+    }
+    // history.pushState(null, "", `/searchPeliculasSeries/1?name=${''}`);
+    $('.preview_imgs_popular').remove();
+    $('.tab').remove();
+    $('.btnMoreVideos').remove();
+    $('#pagination_container').remove();
+    // $('.content_last_videos')
+    let numberPages = res.numberPages;
+    let newHTML = '';
+          res.arrayVideo.forEach((v) => {
+            newHTML += `<a href="/${'pelicula'}/${v.title}" class="carousel__elemento wave tooltip_auto" data-tippy-content="${v.title} (${v.year})">
+            <img class="b-lazy img__loading" src="/img/loader.gif" data-src="${v.image}" alt="">
+            <p class="title-video">${v.title} (${v.year})</p>
+            <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score">${v.score}/10</label></div>
+          </a>`;
+          });
+          $('.content_img_videos').html(newHTML);
+          loaderImgs();
+          setTimeout(() => {
+            loaderImgs();
+          },200); 
+          if(!isMobile()) {
+            tippy('.tooltip_auto', {
+              placement: 'bottom',
+              allowHTML: true,
+              animation: 'fade',
+              theme: 'dark',
+              arrow: '<br>'
+            });
+          }
+    if(numberPages) {
+      let numVeriPages = 0;
+      if(!$('#pagination_container')[0]) {
+        $('.container_home').append(`<div id="pagination_container"></div>
+        <div id="data_container"></div>`);
+      }
+      $('#pagination_container').twbsPagination({
+        totalPages: numberPages,
+        visiblePages: 4,
+        startPage: 1,
+        prev: '<span aria-hidden="true">&laquo;</span>',
+        next: '<span aria-hidden="true">&raquo;</span>',
+        onPageClick: async function (event, page) {
+          numVeriPages ++;
+          if(numVeriPages > 1) {
+              let newHTML = '';
+              let response = await fetch(`/searchPeliculasSeries/${page}?name=${''}`);
+              let res = await response.json();
+              res.arrayVideo.forEach((v) => {
+                newHTML += `<a href="/${'pelicula'}/${v.title}" class="carousel__elemento wave tooltip_auto" data-tippy-content="${v.title} (${v.year})">
+                <img class="b-lazy img__loading" src="/img/loader.gif" data-src="${v.image}" alt="">
+                <p class="title-video">${v.title} (${v.year})</p>
+                <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score">${v.score}/10</label></div>
+              </a>`;
+              });
+              $('.content_img_videos').html(newHTML);
+              loaderImgs();
+              setTimeout(() => {
+                loaderImgs();
+              },200); 
+              if(!isMobile()) {
+                tippy('.tooltip_auto', {
+                  placement: 'bottom',
+                  allowHTML: true,
+                  animation: 'fade',
+                  theme: 'dark',
+                  arrow: '<br>'
+                });
+              }
+              }       
+        }
+    });
+     }
+      }
       $(this).parent().replaceWith(`<a class="search-title wave" href="#">
     <i class="fas fa-search"></i>
   </a>`);
+      // location.href = '/';
+      
     }, 100);
   });
   $('.btnMoreVideos').on('click', function() {
-    location.href = '/peliculas/pages/1';
+    location.href = `/${$(this).html().replace('Ver más ', '').toLowerCase()}/pages/1`;
   });
   
   $('.navbar-bars').on('click', function() {
@@ -106,12 +379,47 @@ $(document).ready(function() {
     startPage: parseInt(currentPage),
     prev: '<span aria-hidden="true">&laquo;</span>',
     next: '<span aria-hidden="true">&raquo;</span>',
-    onPageClick: function (event, page) {
+    onPageClick: async function (event, page) {
       numVeriPages ++;
 
       
       if(numVeriPages > 1) {
-          location.href = `/peliculas/pages/${page}`;
+        if(sectionPage == 'Peliculas') {
+          history.pushState(null, "", `/peliculas/pages/${page}`);
+          let response = await fetch(`/getAjaxPeliculas/${page}`);
+          let res = await response.json();
+          let newHTML = '';
+          res.forEach((v) => {
+            newHTML += `<a href="/${'pelicula'}/${v.title}" class="carousel__elemento wave tooltip_auto" data-tippy-content="${v.title} (${v.year})">
+            <img class="b-lazy img__loading" src="/img/loader.gif" data-src="${v.image}" alt="">
+            <p class="title-video">${v.title} (${v.year})</p>
+            <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score">${v.score}/10</label></div>
+          </a>`;
+          });
+          $('.content_img_videos').html(newHTML);
+          loaderImgs();
+          setTimeout(() => {
+            loaderImgs();
+          },200); 
+          // location.href = `/peliculas/pages/${page}`;
+        } else if(sectionPage == 'Series') {
+          history.pushState(null, "", `/series/pages/${page}`);
+          let response = await fetch(`/getAjaxSeries/${page}`);
+          let res = await response.json();
+          let newHTML = '';
+          res.forEach((v) => {
+            newHTML += `<a href="/${'serie'}/${v.title}" class="carousel__elemento wave tooltip_auto" data-tippy-content="${v.title} (${v.year})">
+            <img class="b-lazy img__loading" src="/img/loader.gif" data-src="${v.image}" alt="">
+            <p class="title-video">${v.title} (${v.year})</p>
+            <div class="rating icon-star"><i class="fas fa-star"></i> <label class="score">${v.score}/10</label></div>
+          </a>`;
+          });
+          $('.content_img_videos').html(newHTML);
+          loaderImgs();
+          setTimeout(() => {
+            loaderImgs();
+          },200); 
+        }
       }       
     }
 });
@@ -197,27 +505,7 @@ window.addEventListener('load', function() {
       ]
     });
   }
-  function loaderImgs() {
-    var bLazy = new Blazy({
-      breakpoints: [{
-        width: 154, // max-width,
-        height: 315,
-        src: 'data-src'
-   }]
-    , success: function(element){
-    setTimeout(function(){
-    // We want to remove the loader gif now.
-    // First we find the parent container
-    // then we remove the "loading" class which holds the loader image
-    var parent = element;
-    // console.log(parent);
-      parent.className = parent.className.replace(/\bimg__loading\b/,'');
-      }, 0);
-        },error: (err) => {
-          alert(err)
-        },
-    });
-  }
+  
   loaderImgs();
   $('.auto_loader_img').each(function() {
     this.src = this.dataset.src;
