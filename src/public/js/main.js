@@ -63,6 +63,7 @@ $(document).ready(function() {
         loaderImgs();
       },200); 
       if(!isMobile()) {
+        $('[data-tippy-root]').remove();
         tippy('.tooltip_auto', {
           placement: 'bottom',
           allowHTML: true,
@@ -92,6 +93,7 @@ $(document).ready(function() {
         loaderImgs();
       },200); 
       if(!isMobile()) {
+        $('[data-tippy-root]').remove();
         tippy('.tooltip_auto', {
           placement: 'bottom',
           allowHTML: true,
@@ -169,6 +171,7 @@ $(document).ready(function() {
     let response = await fetch(`/searchPeliculasSeries/1?name=${$(this).val()}`);
     let res = await response.json();
     if(res.error) { 
+      $('[data-tippy-root]').remove();
       $('#pagination_container').remove();
       $('.preview_imgs_popular').remove();
       $('.tab').remove();
@@ -198,6 +201,7 @@ $(document).ready(function() {
             loaderImgs();
           },200); 
           if(!isMobile()) {
+            $('[data-tippy-root]').remove();
             tippy('.tooltip_auto', {
               placement: 'bottom',
               allowHTML: true,
@@ -237,6 +241,7 @@ $(document).ready(function() {
                 loaderImgs();
               },200); 
               if(!isMobile()) {
+                $('[data-tippy-root]').remove();
                 tippy('.tooltip_auto', {
                   placement: 'bottom',
                   allowHTML: true,
@@ -257,6 +262,7 @@ $(document).ready(function() {
         let response = await fetch(`/searchPeliculasSeries/1?name=${''}`);
     let res = await response.json();
     if(res.error) { 
+      $('[data-tippy-root]').remove();
       $('#pagination_container').remove();
       $('.preview_imgs_popular').remove();
       $('.tab').remove();
@@ -286,6 +292,7 @@ $(document).ready(function() {
             loaderImgs();
           },200); 
           if(!isMobile()) {
+            $('[data-tippy-root]').remove();
             tippy('.tooltip_auto', {
               placement: 'bottom',
               allowHTML: true,
@@ -325,6 +332,7 @@ $(document).ready(function() {
                 loaderImgs();
               },200); 
               if(!isMobile()) {
+                $('[data-tippy-root]').remove();
                 tippy('.tooltip_auto', {
                   placement: 'bottom',
                   allowHTML: true,
